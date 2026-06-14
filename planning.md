@@ -425,37 +425,6 @@ CREATE TABLE IF NOT EXISTS mock_sessions (
 - Day 11-13: Final bug fixes, help teammates
 - Day 14: Final merge, submission prep
 
-**Key code — how NLP + Gemini combine in main.py:**
-```python
-from ml_utils import calculate_ats_score, find_matched_keywords, find_missing_keywords
-from prompts import suggestions_prompt, interview_questions_prompt, mock_eval_prompt
-
-@app.post("/analyze")
-async def analyze_resume(resume, job_description, job_role):
-
-    resume_text = extract_text_from_pdf(pdf_bytes)
-
-    # NLP Guy's functions handle scoring
-    ats_score = calculate_ats_score(resume_text, job_description)
-    matched   = find_matched_keywords(resume_text, job_description)
-    missing   = find_missing_keywords(resume_text, job_description)
-
-    # Gemini handles language tasks only
-    suggestions = call_gemini(suggestions_prompt(resume_text, job_description, missing))
-    questions   = call_gemini(interview_questions_prompt(job_role, missing))
-    summary     = call_gemini(summary_prompt(resume_text, job_description))
-
-    save_analysis(resume.filename, ats_score, {...})
-
-    return {
-        "ats_score": ats_score,
-        "matched_keywords": matched,
-        "missing_keywords": missing,
-        "suggestions": suggestions,
-        "interview_questions": questions,
-        "summary": summary
-    }
-```
 
 ---
 
@@ -466,39 +435,7 @@ async def analyze_resume(resume, job_description, job_role):
 
 **Important:** React runs on port 3000, FastAPI on port 8000. CORS is already configured in main.py so Axios calls will work.
 
-**api.js — put ALL Axios calls here (not scattered in components):**
-```javascript
-import axios from 'axios';
 
-const BASE_URL = 'http://localhost:8000';
-
-export const analyzeResume = async (resumeFile, jobDescription, jobRole) => {
-  const formData = new FormData();
-  formData.append('resume', resumeFile);
-  formData.append('job_description', jobDescription);
-  formData.append('job_role', jobRole);
-  return await axios.post(`${BASE_URL}/analyze`, formData);
-};
-
-export const getHistory = async () => {
-  return await axios.get(`${BASE_URL}/history`);
-};
-
-export const submitMockAnswer = async (question, answer, jobRole) => {
-  const formData = new FormData();
-  formData.append('question', question);
-  formData.append('user_answer', answer);
-  formData.append('job_role', jobRole);
-  return await axios.post(`${BASE_URL}/mock-answer`, formData);
-};
-
-export const completeMockSession = async (jobRole, sessionData) => {
-  const formData = new FormData();
-  formData.append('job_role', jobRole);
-  formData.append('session_data', JSON.stringify(sessionData));
-  return await axios.post(`${BASE_URL}/mock-session-complete`, formData);
-};
-```
 
 **4 Pages to Build:**
 
@@ -547,49 +484,7 @@ export const completeMockSession = async (jobRole, sessionData) => {
 - Make sure init_db() runs on server startup
 - Test inserts and selects manually
 
-**test_api.py — test all 7 endpoints:**
-```python
-import requests, json
 
-BASE = "http://localhost:8000"
-
-def test_health():
-    r = requests.get(f"{BASE}/")
-    assert r.status_code == 200
-    print("✅ Health check passed")
-
-def test_analyze():
-    with open("test_resume.pdf", "rb") as f:
-        r = requests.post(f"{BASE}/analyze",
-            files={"resume": f},
-            data={"job_description": "Python FastAPI developer needed", "job_role": "Backend Dev"}
-        )
-    assert r.status_code == 200
-    assert "ats_score" in r.json()["analysis"]
-    print("✅ Analyze endpoint passed")
-
-def test_history():
-    r = requests.get(f"{BASE}/history")
-    assert r.status_code == 200
-    print("✅ History endpoint passed")
-
-def test_mock_answer():
-    r = requests.post(f"{BASE}/mock-answer",
-        data={"question": "What is FastAPI?",
-              "user_answer": "FastAPI is a Python web framework",
-              "job_role": "Backend Developer"}
-    )
-    assert r.status_code == 200
-    assert "evaluation" in r.json()
-    print("✅ Mock answer endpoint passed")
-
-if __name__ == "__main__":
-    test_health()
-    test_analyze()
-    test_history()
-    test_mock_answer()
-    print("\n✅ All tests passed!")
-```
 
 **Render.com Deployment (backend):**
 ```
@@ -619,79 +514,7 @@ if __name__ == "__main__":
 **CRITICAL RULE:** Do NOT change these function signatures.
 Ansh's main.py imports them directly. Names and return types must match exactly.
 
-**ml_utils.py — your 4 functions:**
-```python
-import spacy
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
-import numpy as np
 
-nlp = spacy.load("en_core_web_sm")
-
-def extract_keywords(text: str) -> list:
-    """
-    Extract skill/tech keywords from text using spaCy.
-    Returns list of strings.
-    """
-    doc = nlp(text.lower())
-    keywords = []
-    # Your logic: noun chunks, named entities, skill matching
-    return list(set(keywords))   # no duplicates
-
-def calculate_ats_score(resume_text: str, jd_text: str) -> int:
-    """
-    Calculate ATS score using TF-IDF cosine similarity.
-    Returns integer between 0 and 100.
-    """
-    vectorizer = TfidfVectorizer()
-    vectors = vectorizer.fit_transform([resume_text, jd_text])
-    score = cosine_similarity(vectors[0], vectors[1])[0][0]
-    return int(score * 100)
-
-def find_matched_keywords(resume_text: str, jd_text: str) -> list:
-    """
-    Find keywords present in both resume and JD.
-    Returns list of strings.
-    """
-    resume_kw = set(extract_keywords(resume_text))
-    jd_kw     = set(extract_keywords(jd_text))
-    return list(resume_kw & jd_kw)
-
-def find_missing_keywords(resume_text: str, jd_text: str) -> list:
-    """
-    Find keywords in JD but missing from resume.
-    Returns list of strings.
-    """
-    resume_kw = set(extract_keywords(resume_text))
-    jd_kw     = set(extract_keywords(jd_text))
-    return list(jd_kw - resume_kw)
-```
-
-**Test your functions before handing to Ansh:**
-```python
-if __name__ == "__main__":
-    resume = "Experienced Python developer with FastAPI and SQL skills. Built REST APIs."
-    jd = "Looking for Python developer with FastAPI, Docker, PostgreSQL, and REST API experience."
-
-    print("Score:", calculate_ats_score(resume, jd))          # expect ~60-75
-    print("Matched:", find_matched_keywords(resume, jd))      # ["Python", "FastAPI", "REST API"]
-    print("Missing:", find_missing_keywords(resume, jd))      # ["Docker", "PostgreSQL"]
-```
-
-**prompts.py — 3 prompts to own and improve:**
-```python
-def suggestions_prompt(resume_text: str, jd_text: str, missing_keywords: list) -> str:
-    """Gemini gives 3-5 specific resume improvement tips"""
-    return f"""..."""
-
-def interview_questions_prompt(job_role: str, missing_skills: list) -> str:
-    """Gemini generates exactly 7 interview questions"""
-    return f"""..."""
-
-def mock_eval_prompt(question: str, user_answer: str, job_role: str) -> str:
-    """Gemini evaluates answer and returns score + feedback"""
-    return f"""..."""
-```
 
 **Hand ml_utils.py to Ansh by Day 6.**
 **Hand improved prompts.py to Ansh by Day 8.**
