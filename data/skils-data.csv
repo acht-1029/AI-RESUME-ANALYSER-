@@ -1,0 +1,382 @@
+skill,category,level
+Python,Programming,Core
+Java,Programming,Core
+JavaScript,Programming,Core
+TypeScript,Programming,Intermediate
+C++,Programming,Advanced
+C#,Programming,Intermediate
+Go,Programming,Advanced
+Rust,Programming,Advanced
+Kotlin,Programming,Intermediate
+SQL,Programming,Core
+Scala,Programming,Intermediate
+R,Programming,Intermediate
+Swift,Programming,Intermediate
+Objective-C,Programming,Intermediate
+Perl,Programming,Intermediate
+MATLAB,Programming,Intermediate
+Shell Scripting,Programming,Intermediate
+Bash,Programming,Intermediate
+PHP,Programming,Core
+Ruby,Programming,Intermediate
+Data Structures and Algorithms,Programming,Core
+Object-Oriented Programming,Programming,Core
+Design Patterns,Programming,Intermediate
+System Design,Programming,Advanced
+Software Architecture,Programming,Advanced
+Functional Programming,Programming,Intermediate
+Concurrent Programming,Programming,Advanced
+Memory Management,Programming,Advanced
+Debugging,Programming,Core
+Performance Optimization,Programming,Advanced
+Clean Code,Programming,Core
+Code Review,Programming,Intermediate
+Problem Solving,Programming,Core
+React,Frontend,Core
+Next.js,Frontend,Intermediate
+Angular,Frontend,Intermediate
+Vue.js,Frontend,Intermediate
+Tailwind CSS,Frontend,Core
+Redux,Frontend,Intermediate
+Material UI,Frontend,Intermediate
+Vite,Frontend,Intermediate
+HTML5,Frontend,Core
+CSS3,Frontend,Core
+SASS,Frontend,Intermediate
+LESS,Frontend,Intermediate
+Bootstrap,Frontend,Core
+Webpack,Frontend,Intermediate
+Babel,Frontend,Intermediate
+React Native,Mobile,Intermediate
+Responsive Design,Frontend,Intermediate
+Adaptive Design,Frontend,Intermediate
+Web Accessibility,Frontend,Intermediate
+Progressive Web Apps,Frontend,Advanced
+GraphQL Client,Frontend,Intermediate
+REST API Integration,Frontend,Core
+PostCSS,Frontend,Intermediate
+Storybook,Frontend,Intermediate
+Node.js,Backend,Core
+Express.js,Backend,Core
+FastAPI,Backend,Intermediate
+Django,Backend,Core
+Flask,Backend,Core
+Spring Boot,Backend,Intermediate
+ASP.NET Core,Backend,.NET
+NestJS,Backend,Intermediate
+GraphQL,Backend,Intermediate
+REST API,Backend,Core
+Microservices,Backend,Advanced
+gRPC,Backend,Advanced
+RESTful APIs,Backend,Core
+API Development,Backend,Core
+Authentication,Backend,Core
+Authorization,Backend,Core
+OAuth 2.0,Backend,Intermediate
+JWT,Backend,Intermediate
+Message Queues,Backend,Intermediate
+RabbitMQ,Backend,Intermediate
+Apache Kafka,Backend,Advanced
+WebSockets,Backend,Intermediate
+Serverless Architecture,Backend,Advanced
+Celery,Backend,Intermediate
+WSDL,Backend,Intermediate
+SOAP,Backend,Intermediate
+MVC Architecture,Backend,Core
+API Gateway,Backend,Advanced
+Rate Limiting,Backend,Intermediate
+Caching Strategies,Backend,Intermediate
+Session Management,Backend,Core
+PostgreSQL,Database,Core
+MySQL,Database,Core
+MongoDB,Database,Core
+Redis,Database,Intermediate
+Elasticsearch,Database,Advanced
+DynamoDB,Database,Intermediate
+Snowflake,Database,Advanced
+BigQuery,Database,Advanced
+Microsoft SQL Server,Database,Intermediate
+Oracle Database,Database,Intermediate
+SQLite,Database,Core
+Cassandra,Database,Advanced
+Firebase,Database,Intermediate
+Supabase,Database,Intermediate
+Database Administration,Database,Advanced
+Database Design,Database,Intermediate
+Data Modeling,Database,Intermediate
+Query Optimization,Database,Advanced
+Database Indexing,Database,Intermediate
+Stored Procedures,Database,Intermediate
+Database Migration,Database,Intermediate
+ETL,Database,Intermediate
+Data Warehousing,Database,Advanced
+ORM,Database,Core
+TensorFlow,AI/ML,Advanced
+PyTorch,AI/ML,Advanced
+Scikit-learn,AI/ML,Intermediate
+Hugging Face,AI/ML,Advanced
+LangChain,AI/ML,Advanced
+LlamaIndex,AI/ML,Advanced
+OpenAI API,AI/ML,Intermediate
+Gemini API,AI/ML,Intermediate
+Prompt Engineering,AI/ML,Intermediate
+RAG,AI/ML,Advanced
+MLOps,AI/ML,Advanced
+AI Agents,AI/ML,Advanced
+Keras,AI/ML,Intermediate
+OpenCV,AI/ML,Intermediate
+Machine Learning,AI/ML,Core
+Deep Learning,AI/ML,Advanced
+Computer Vision,AI/ML,Advanced
+Natural Language Processing,AI/ML,Advanced
+Generative AI,AI/ML,Advanced
+Fine-Tuning LLMs,AI/ML,Advanced
+Model Deployment,AI/ML,Advanced
+Feature Engineering,AI/ML,Intermediate
+Predictive Analytics,AI/ML,Intermediate
+Convolutional Neural Networks,AI/ML,Advanced
+Artificial Neural Networks,AI/ML,Intermediate
+Reinforcement Learning,AI/ML,Advanced
+Transfer Learning,AI/ML,Advanced
+Object Detection,AI/ML,Advanced
+Semantic Segmentation,AI/ML,Advanced
+Image Processing,AI/ML,Intermediate
+Data Mining,AI/ML,Intermediate
+Statistical Modeling,AI/ML,Intermediate
+Amazon SageMaker,AI/ML,Advanced
+Docker,DevOps,Core
+Kubernetes,DevOps,Advanced
+Terraform,DevOps,Advanced
+Jenkins,DevOps,Intermediate
+GitHub Actions,DevOps,Intermediate
+GitLab CI/CD,DevOps,Intermediate
+Helm,DevOps,Advanced
+Prometheus,DevOps,Advanced
+Grafana,DevOps,Intermediate
+CI/CD,DevOps,Core
+Infrastructure as Code,DevOps,Advanced
+DevSecOps,DevOps,Advanced
+Monitoring,DevOps,Intermediate
+Observability,DevOps,Advanced
+Site Reliability Engineering,DevOps,Advanced
+Containerization,DevOps,Intermediate
+Ansible,DevOps,Intermediate
+Puppet,DevOps,Intermediate
+Chef,DevOps,Intermediate
+ArgoCD,DevOps,Advanced
+Flux CD,DevOps,Advanced
+ELK Stack,DevOps,Advanced
+Log Management,DevOps,Intermediate
+Incident Management,DevOps,Intermediate
+Release Management,DevOps,Intermediate
+Blue-Green Deployment,DevOps,Advanced
+Canary Deployment,DevOps,Advanced
+Service Mesh,DevOps,Advanced
+Istio,DevOps,Advanced
+AWS,Cloud,Core
+Microsoft Azure,Cloud,Intermediate
+Google Cloud Platform,Cloud,Intermediate
+AWS Lambda,Cloud,Intermediate
+Amazon EC2,Cloud,Core
+Amazon S3,Cloud,Core
+Azure Functions,Cloud,Intermediate
+GKE,Cloud,Advanced
+Cloud Computing,Cloud,Core
+Amazon RDS,Cloud,Intermediate
+Amazon EKS,Cloud,Advanced
+Amazon ECS,Cloud,Intermediate
+Amazon CloudFront,Cloud,Intermediate
+Azure DevOps,Cloud,Intermediate
+Azure Kubernetes Service,Cloud,Advanced
+Google Cloud Run,Cloud,Intermediate
+Firebase Hosting,Cloud,Core
+Cloud Architecture,Cloud,Advanced
+Multi-Cloud Strategy,Cloud,Advanced
+Hybrid Cloud,Cloud,Advanced
+Cloud Security,Cloud,Advanced
+Cost Optimization,Cloud,Intermediate
+Serverless Computing,Cloud,Intermediate
+Load Balancing,Cloud,Intermediate
+Auto Scaling,Cloud,Advanced
+VPC Networking,Cloud,Advanced
+Selenium,Testing,Intermediate
+Cypress,Testing,Intermediate
+Playwright,Testing,Intermediate
+PyTest,Testing,Core
+JUnit,Testing,Core
+Postman,Testing,Core
+API Testing,Testing,Core
+Integration Testing,Testing,Intermediate
+Unit Testing,Testing,Core
+Test Automation,Testing,Intermediate
+Performance Testing,Testing,Intermediate
+Load Testing,Testing,Intermediate
+End-to-End Testing,Testing,Intermediate
+Test-Driven Development,Testing,Advanced
+Behavior-Driven Development,Testing,Advanced
+Mock Testing,Testing,Intermediate
+Test Coverage,Testing,Core
+Quality Assurance,Testing,Core
+Regression Testing,Testing,Intermediate
+Smoke Testing,Testing,Core
+Security Testing,Testing,Advanced
+Flutter,Mobile,Intermediate
+Android SDK,Mobile,Intermediate
+iOS SDK,Mobile,Intermediate
+SwiftUI,Mobile,Intermediate
+Jetpack Compose,Mobile,Intermediate
+Kotlin Multiplatform,Mobile,Advanced
+Mobile App Development,Mobile,Core
+App Store Deployment,Mobile,Intermediate
+Push Notifications,Mobile,Intermediate
+Mobile Performance Optimization,Mobile,Advanced
+Core Data,Mobile,Intermediate
+Core Animation,Mobile,Intermediate
+Mobile UI/UX,Mobile,Intermediate
+Cross-Platform Development,Mobile,Intermediate
+Cocoa Touch,Mobile,Intermediate
+Mobile Testing,Mobile,Intermediate
+Wireshark,Cybersecurity,Advanced
+Metasploit,Cybersecurity,Advanced
+Burp Suite,Cybersecurity,Advanced
+Nmap,Cybersecurity,Intermediate
+OWASP Top 10,Cybersecurity,Intermediate
+Threat Hunting,Cybersecurity,Advanced
+SIEM,Cybersecurity,Advanced
+Penetration Testing,Cybersecurity,Advanced
+Incident Response,Cybersecurity,Advanced
+Secure Coding,Cybersecurity,Intermediate
+Vulnerability Assessment,Cybersecurity,Advanced
+Network Security,Cybersecurity,Advanced
+Encryption,Cybersecurity,Intermediate
+PKI,Cybersecurity,Advanced
+Zero Trust Architecture,Cybersecurity,Advanced
+Identity and Access Management,Cybersecurity,Advanced
+Security Auditing,Cybersecurity,Advanced
+Firewall Configuration,Cybersecurity,Intermediate
+Intrusion Detection,Cybersecurity,Advanced
+Malware Analysis,Cybersecurity,Advanced
+Security Compliance,Cybersecurity,Intermediate
+Risk Assessment,Cybersecurity,Advanced
+Pandas,Data Science,Core
+NumPy,Data Science,Core
+Apache Spark,Data Science,Advanced
+Hadoop,Data Science,Advanced
+Tableau,Data Science,Intermediate
+Power BI,Data Science,Intermediate
+Apache Airflow,Data Science,Advanced
+Data Engineering,Data Science,Advanced
+Data Visualization,Data Science,Intermediate
+Statistical Analysis,Data Science,Intermediate
+A/B Testing,Data Science,Intermediate
+Data Cleaning,Data Science,Core
+Data Pipeline,Data Science,Advanced
+Matplotlib,Data Science,Core
+Seaborn,Data Science,Intermediate
+Plotly,Data Science,Intermediate
+Data Wrangling,Data Science,Intermediate
+Feature Selection,Data Science,Intermediate
+Dimensionality Reduction,Data Science,Advanced
+Time Series Analysis,Data Science,Advanced
+Bayesian Statistics,Data Science,Advanced
+Regression Analysis,Data Science,Intermediate
+Classification Algorithms,Data Science,Intermediate
+Clustering Algorithms,Data Science,Intermediate
+SciPy,Data Science,Intermediate
+NLTK,Data Science,Intermediate
+Dask,Data Science,Advanced
+Git,Tools,Core
+GitHub,Tools,Core
+GitLab,Tools,Core
+VS Code,Tools,Core
+PyCharm,Tools,Core
+IntelliJ IDEA,Tools,Core
+Jira,Tools,Core
+Confluence,Tools,Core
+Figma,Tools,Intermediate
+Postman API,Tools,Core
+Slack,Tools,Core
+Notion,Tools,Core
+Docker Compose,Tools,Intermediate
+Linux,Tools,Core
+Vim,Tools,Intermediate
+Nginx,Tools,Intermediate
+Apache HTTP Server,Tools,Intermediate
+Bitbucket,Tools,Core
+Trello,Tools,Core
+Microsoft IIS,Tools,Intermediate
+SonarQube,Tools,Intermediate
+New Relic,Tools,Intermediate
+Datadog,Tools,Advanced
+Splunk,Tools,Advanced
+Agile Methodology,Tools,Core
+Scrum,Tools,Core
+Kanban,Tools,Core
+Technical Documentation,Tools,Core
+Distributed Systems,Programming,Advanced
+Concurrent Systems,Programming,Advanced
+Event-Driven Architecture,Backend,Advanced
+Domain-Driven Design,Backend,Advanced
+CQRS,Backend,Advanced
+Event Sourcing,Backend,Advanced
+API Versioning,Backend,Intermediate
+Service-Oriented Architecture,Backend,Advanced
+Twelve-Factor App,Backend,Intermediate
+Async Programming,Programming,Intermediate
+Multithreading,Programming,Advanced
+JSON,Programming,Core
+XML,Programming,Core
+YAML,Programming,Core
+Regex,Programming,Intermediate
+WebAssembly,Frontend,Advanced
+Micro-Frontend Architecture,Frontend,Advanced
+Server-Side Rendering,Frontend,Intermediate
+Static Site Generation,Frontend,Intermediate
+Browser DevTools,Frontend,Core
+Web Performance,Frontend,Intermediate
+SEO Optimization,Frontend,Core
+Cross-Browser Compatibility,Frontend,Intermediate
+PWA Service Workers,Frontend,Advanced
+IndexedDB,Frontend,Intermediate
+Internationalization,Frontend,Intermediate
+Image Classification,AI/ML,Advanced
+Faster R-CNN,AI/ML,Advanced
+YOLO,AI/ML,Advanced
+GAN,AI/ML,Advanced
+BERT,AI/ML,Advanced
+GPT Integration,AI/ML,Advanced
+Vector Databases,AI/ML,Advanced
+Embedding Models,AI/ML,Advanced
+Model Evaluation,AI/ML,Intermediate
+Hyperparameter Tuning,AI/ML,Advanced
+Cross-Validation,AI/ML,Intermediate
+Confusion Matrix,AI/ML,Core
+ROC Curve,AI/ML,Intermediate
+Precision and Recall,AI/ML,Intermediate
+Fraud Detection,AI/ML,Advanced
+Recommendation Systems,AI/ML,Advanced
+Chatbot Development,AI/ML,Intermediate
+Speech Recognition,AI/ML,Advanced
+Network Monitoring,DevOps,Intermediate
+Chaos Engineering,DevOps,Advanced
+Disaster Recovery,DevOps,Advanced
+Backup and Restore,DevOps,Intermediate
+SLA Management,DevOps,Intermediate
+Capacity Planning,DevOps,Advanced
+Configuration Management,DevOps,Intermediate
+Secret Management,DevOps,Advanced
+Vault,DevOps,Advanced
+Artifact Management,DevOps,Intermediate
+Nexus Repository,DevOps,Intermediate
+IAM Roles,Cloud,Advanced
+Cloud Cost Management,Cloud,Intermediate
+Elastic Load Balancer,Cloud,Intermediate
+CDN,Cloud,Intermediate
+Object Storage,Cloud,Core
+Cloud Networking,Cloud,Advanced
+API Management,Cloud,Intermediate
+ERP Integration,Tools,Advanced
+Version Control,Tools,Core
+Code Quality Tools,Tools,Intermediate
+Swagger,Tools,Intermediate
+OpenAPI,Tools,Intermediate
