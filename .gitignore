@@ -1,0 +1,17 @@
+# Environment
+.env
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
+.idea/
+
+# Test data (personal resumes)
+tests/test_samples/*.pdf
+
+# OS
+Thumbs.db
+.DS_Store
