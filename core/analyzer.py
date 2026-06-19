@@ -47,14 +47,9 @@ class ResumeAnalyzer:
         sections = split_sections(resume_text)
         
         # 3. Extract skills from Resume and JD
-        # Optimization: We try to extract skills primarily from the "skills" section to reduce false positives.
-        # If the skills section is missing or too short, we fall back to scanning the entire resume.
-        skills_text = sections.get("skills", "")
-        if len(skills_text.strip()) < 50:
-            logger.info("Skills section missing or too short. Falling back to full resume text.")
-            skills_text = resume_text 
-            
-        resume_skills = extract_skills(skills_text)
+        # Since we added strict false-positive guards (stop words, length ratio) to skill_extractor in Day 1,
+        # it is now perfectly safe (and better for multi-column PDFs) to scan the entire resume text.
+        resume_skills = extract_skills(resume_text)
         
         # For JD, we always scan the full text because JDs rarely have standard sections
         jd_skills = extract_skills(jd_text)
