@@ -79,7 +79,7 @@ def main():
         print(f"       Create it and add some resume PDFs!")
         return
 
-    pdfs = list(samples_dir.glob("*.pdf"))
+    pdfs = list(samples_dir.rglob("*.pdf"))
     
     if not pdfs:
         print(f"[FAIL] No PDF files found in: {samples_dir}")
