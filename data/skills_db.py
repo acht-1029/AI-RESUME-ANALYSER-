@@ -78,7 +78,7 @@ _TOOLS_PRACTICES = [
     "Jest", "Pytest", "Postman", "Swagger", "OpenAPI",
     "Figma", "Adobe XD", "Microservices", "Monolith", "Event Driven",
     "Message Queue", "RabbitMQ", "gRPC", "Protocol Buffers",
-    "Design Patterns", "SOLID", "OOP", "Functional Programming",
+    "Design Patterns", "SOLID Principles", "OOP", "Functional Programming",
     "System Design", "API Design", "Technical Writing",
 ]
 

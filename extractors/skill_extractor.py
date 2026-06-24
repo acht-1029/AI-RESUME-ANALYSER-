@@ -45,7 +45,7 @@ STOP_WORDS: set[str] = {
     "working", "experience", "strategic", "waiting", "making",
     "planning", "solutions", "optimization", "processing",
     "intelligence", "network", "model", "models", "tools",
-    "strong", "focus", "team", "project", "projects",
+    "strong", "focus", "team", "project", "projects", "solid",
 }
 
 
