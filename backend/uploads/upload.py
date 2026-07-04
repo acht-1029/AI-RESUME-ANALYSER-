@@ -83,6 +83,8 @@ async def upload_resume(
 
     company: str = Form(...),
 
+    job_description: str = Form(...),
+ 
     current_user: User = Depends(get_current_user),
 
     db: Session = Depends(get_db)
@@ -126,6 +128,8 @@ async def upload_resume(
         resume_path=filepath,
 
         jd_title=jd_title,
+
+        job_description=job_description,
 
         company=company,
 
