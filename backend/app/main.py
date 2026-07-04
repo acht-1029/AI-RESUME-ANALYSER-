@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from database import Base, engine
 from auth import router as auth_router
 from upload import router as upload_router
+from history import router as history_router
 
 # Import models so SQLAlchemy creates tables
 import models
@@ -47,11 +48,7 @@ app.add_middleware(
 
 app.include_router(auth_router)
 app.include_router(upload_router)
-
-# Future Routers
-# app.include_router(ats_router)
-# app.include_router(history_router)
-# app.include_router(profile_router)
+app.include_router(history_router)
 
 # ==========================================
 # Home Route
