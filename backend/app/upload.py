@@ -16,9 +16,9 @@ from fastapi.security import OAuth2PasswordBearer
 
 from sqlalchemy.orm import Session
 
-from database import get_db
-from models import User, ResumeHistory
-from security import decode_access_token
+from app.database import get_db
+from app.models import User, ResumeHistory
+from app.security import decode_access_token
 
 # ==========================================
 # Router
