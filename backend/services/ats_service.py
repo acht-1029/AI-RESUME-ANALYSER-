@@ -1,40 +1,36 @@
 from services.resume_parser import extract_resume_text
+from services.skill_extractor import compare_skills
 
 
 class ATSService:
-    """
-    Service layer for connecting the web application
-    with the ATS/NLP engine.
-    """
 
     @staticmethod
-    def analyze_resume(file_path: str, job_description: str):
+    def analyze_resume(file_path , job_description):
 
-        # Extract resume text
         resume_text = extract_resume_text(file_path)
 
-        # ======================================================
-        # TODO:
-        # Replace these placeholders with Keshav's functions
-        # ======================================================
+        result = compare_skills(
 
-        ats_score = 0
+            resume_text,
 
-        matched_skills = []
+            job_description
 
-        missing_skills = []
+        )
 
-        suggestions = []
+        result["suggestions"] = [
 
-        interview_questions = []
+            f"Learn {skill}"
 
-        result = {
-            "resume_text": resume_text,
-            "ats_score": ats_score,
-            "matched_skills": matched_skills,
-            "missing_skills": missing_skills,
-            "suggestions": suggestions,
-            "interview_questions": interview_questions
-        }
+            for skill in result["missing_skills"]
+
+        ]
+
+        result["interview_questions"] = [
+
+            f"Explain your experience with {skill}"
+
+            for skill in result["matched_skills"]
+
+        ]
 
         return result
