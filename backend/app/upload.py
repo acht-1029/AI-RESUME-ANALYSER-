@@ -44,31 +44,7 @@ MAX_FILE_SIZE = 5 * 1024 * 1024  # 5 MB
 # Get Current User
 # ==========================================
 
-def get_current_user(
-    token: str = Depends(oauth2_scheme),
-    db: Session = Depends(get_db)
-):
-
-    email = decode_access_token(token)
-
-    if not email:
-        raise HTTPException(
-            status_code=401,
-            detail="Invalid Token"
-        )
-
-    user = db.query(User).filter(
-        User.email == email
-    ).first()
-
-    if not user:
-        raise HTTPException(
-            status_code=404,
-            detail="User not found"
-        )
-
-    return user
-
+from app.dependencies import get_current_user
 
 # ==========================================
 # Upload Resume
