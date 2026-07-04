@@ -47,6 +47,8 @@ class ResumeHistory(Base):
     jd_title = Column(String(255))
 
     company = Column(String(255))
+    
+    job_description = Column(Text)
 
     ats_score = Column(Float)
 
