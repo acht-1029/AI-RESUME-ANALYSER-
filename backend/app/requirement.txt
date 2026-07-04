@@ -21,3 +21,7 @@ email-validator
 aiofiles
 jinja2
 reportlab
+python-dotenv
+python-jose[cryptography]
+passlib[bcrypt]
+bcrypt
