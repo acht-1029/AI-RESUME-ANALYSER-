@@ -6,6 +6,7 @@ from app.auth import router as auth_router
 from app.upload import router as upload_router
 from app.history import router as history_router
 from app.ats import router as ats_router
+from app.dashboard import router as dashboard_router
 
 # Import models so SQLAlchemy creates tables
 import models
@@ -51,6 +52,7 @@ app.include_router(auth_router)
 app.include_router(upload_router)
 app.include_router(history_router)
 app.include_router(ats_router)
+app.include_router(dashboard_router)
 
 # ==========================================
 # Home Route
