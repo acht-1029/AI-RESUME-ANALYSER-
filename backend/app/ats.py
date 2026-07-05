@@ -71,7 +71,6 @@ def analyze_resume(
 
         "suggestions": result["suggestions"],
 
-        "interview_questions": result["interview_questions"],
+        "interview_questions": result["interview_questions"]
 
-        "ai_feedback": result["ai_feedback"],
     }
