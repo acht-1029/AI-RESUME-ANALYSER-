@@ -7,6 +7,7 @@ from app.upload import router as upload_router
 from app.history import router as history_router
 from app.ats import router as ats_router
 from app.dashboard import router as dashboard_router
+from app.profile import router as profile_router
 
 # Import models so SQLAlchemy creates tables
 import models
@@ -53,6 +54,7 @@ app.include_router(upload_router)
 app.include_router(history_router)
 app.include_router(ats_router)
 app.include_router(dashboard_router)
+app.include_router(profile_router)
 
 # ==========================================
 # Home Route
