@@ -1,6 +1,5 @@
 from core.analyzer import ResumeAnalyzer
 
-
 class ATSService:
 
     analyzer = ResumeAnalyzer()
@@ -18,10 +17,7 @@ class ATSService:
         )
 
         if not result["success"]:
-
-            raise Exception(
-                result["error"]
-            )
+            raise Exception(result["error"])
 
         return {
 
@@ -31,12 +27,11 @@ class ATSService:
 
             "missing_skills": result["skills_analysis"]["missing_skills"],
 
-            "suggestions":
-                result["genai_coach"]["resume_improvement_suggestions"],
+            "suggestions": result["genai_coach"]["resume_improvement_suggestions"],
 
-            "interview_questions":
-                result["genai_coach"]["mock_interview_questions"],
+            "interview_questions": result["genai_coach"]["mock_interview_questions"],
 
-            "raw_result": result
+            "metadata": result["metadata"],
 
+            "scores": result["scores"]
         }
