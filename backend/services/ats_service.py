@@ -1,38 +1,42 @@
-from services.resume_parser import extract_resume_text
-from services.skill_extractor import compare_skills
-from services.gemini_service import GeminiService
+from core.analyzer import ResumeAnalyzer
 
 
 class ATSService:
 
-    @staticmethod
+    analyzer = ResumeAnalyzer()
+
+    @classmethod
     def analyze_resume(
-        file_path,
-        job_description
+        cls,
+        file_path: str,
+        job_description: str
     ):
 
-        resume_text = extract_resume_text(file_path)
-
-        result = compare_skills(
-            resume_text,
-            job_description
+        result = cls.analyzer.full_analysis(
+            resume_pdf_path=file_path,
+            jd_text=job_description
         )
 
-        ai_feedback = GeminiService.analyze_resume(
-            resume_text,
-            job_description
-        )
+        if not result["success"]:
 
-        result["ai_feedback"] = ai_feedback
+            raise Exception(
+                result["error"]
+            )
 
-        result["suggestions"] = [
-            f"Learn {skill}"
-            for skill in result["missing_skills"]
-        ]
+        return {
 
-        result["interview_questions"] = [
-            f"Explain your experience with {skill}"
-            for skill in result["matched_skills"]
-        ]
+            "ats_score": result["scores"]["overall_ats_score"],
 
-        return result
+            "matched_skills": result["skills_analysis"]["matching_skills"],
+
+            "missing_skills": result["skills_analysis"]["missing_skills"],
+
+            "suggestions":
+                result["genai_coach"]["resume_improvement_suggestions"],
+
+            "interview_questions":
+                result["genai_coach"]["mock_interview_questions"],
+
+            "raw_result": result
+
+        }
