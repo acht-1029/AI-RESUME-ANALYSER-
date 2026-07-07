@@ -92,6 +92,9 @@ def login(user: UserLogin, db: Session = Depends(get_db)):
 # ======================================
 
 @router.get("/me", response_model=UserResponse)
+oauth2_scheme = OAuth2PasswordBearer(
+    tokenUrl="/auth/login"
+)
 def current_user(
     token: str = Depends(oauth2_scheme),
     db: Session = Depends(get_db)
