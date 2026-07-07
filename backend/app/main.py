@@ -11,7 +11,7 @@ from app.profile import router as profile_router
 from app.report import router as report_router
 
 # Import models so SQLAlchemy creates tables
-import models
+import app.models
 
 # ==========================================
 # Create Database Tables
